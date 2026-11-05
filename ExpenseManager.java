@@ -1,6 +1,6 @@
 
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class ExpenseManager {
 
@@ -172,4 +172,37 @@ public class ExpenseManager {
             System.out.println("Error loading data!");
         }
     }
+
+    // Get All Transactions
+public ArrayList<Transaction> getTransactions() {
+    return transactions;
 }
+
+    // Update Transaction
+public void updateTransaction(
+        int id,
+        String category,
+        double amount,
+        String description) {
+
+    for (Transaction t : transactions) {
+
+        if (t.getId() == id) {
+
+            t.setCategory(category);
+            t.setAmount(amount);
+            t.setDescription(description);
+
+            saveToFile();
+
+            System.out.println("Transaction updated!");
+            return;
+        }
+    }
+
+    System.out.println("Transaction not found!");
+}
+}
+
+
+

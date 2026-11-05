@@ -49,5 +49,18 @@ public class Transaction {
         System.out.println("Amount: ₹" + amount);
         System.out.println("Description: " + description);
     }
+
+
+    public void setCategory(String category) {
+    this.category = category;
+}
+
+public void setAmount(double amount) {
+    this.amount = amount;
+}
+
+public void setDescription(String description) {
+    this.description = description;
+}
 }
 
